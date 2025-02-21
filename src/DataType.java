@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataType {
-    private int jumlahPiece;
-    private int panjangPapan;
-    private int lebarPapan;
-    private String caseType;
-    private char[][] board;
-    private List<Piece> pieces;
+    private final int jumlahPiece;
+    private final int panjangPapan;
+    private final int lebarPapan;
+    private final String caseType;
+    private final char[][] board;
+    private final List<Piece> pieces;
 
     /* ========== CONSTRUCTOR ========= */
     public DataType(int jumlahPiece, int panjangPapan, int lebarPapan, String caseType) {
