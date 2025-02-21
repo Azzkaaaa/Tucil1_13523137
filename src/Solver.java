@@ -100,6 +100,7 @@ public class Solver {
         }
     }
 
+    /* ========== Placing ========= */
     public boolean canPlace(Piece piece, int i, int j){
         int row = data.getLebarPapan();
         int col = data.getPanjangPapan();
