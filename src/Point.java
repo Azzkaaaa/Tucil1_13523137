@@ -1,21 +1,30 @@
 public class Point {
 
     /* ========== ATTRIBUTES ========== */
-    private float X;
-    private float Y;
+    private int X;
+    private int Y;
 
     /* ============ GETTER ============ */
-    public float getX() {
+    public int getX() {
         return this.X;
     }
 
-    public float getY() {
+    public int getY() {
         return this.Y;
     }
 
     /* ========== CONSTRUCTOR ========= */
-    public Point(float x, float y) {
+    public Point(int x, int y) {
         this.X = x;
         this.Y = y;
+    }
+
+    /* ============ Setter ============ */
+    public void setX(int newX){
+        this.X = newX;
+    }
+
+    public void setY(int newY){
+        this.Y = newY;
     }
 }
