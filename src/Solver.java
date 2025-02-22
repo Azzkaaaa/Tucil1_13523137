@@ -4,14 +4,69 @@ import java.util.List;
 
 public class Solver {
     private DataType data;
+    private long iteration = 0;
+    private boolean solFound = false;
 
+    /* ========== Constructor ========= */
     public Solver(DataType data){
         this.data = data;
     }
-    /* ========== Methods ========= */
-    /* ========== Solve ========= */
-    public void solve(int i){
 
+    /* ========== Getter ========= */
+    public long getIteration(){
+        return iteration;
+    }
+
+    public boolean  getsolFound(){
+        return solFound;
+    }
+    /* ========== Methods ========= */
+    /* ========== Save ========= */
+    public void saveSol(){
+
+    }
+    /* ========== Solve ========= */
+    public boolean solve(int pieceIndex){
+        if (pieceIndex == data.getPieces().size()){
+            if (isBoeardFull()){
+                solFound = true;
+                return true;
+            }
+            return false;
+        }
+
+        Piece original = data.getPieces().get(pieceIndex);
+
+        List<Piece> transform = transAll(original);
+
+        for (Piece trans : transform){
+            for (int i = 0; i < data.getLebarPapan(); i++){
+                for (int j = 0; j < data.getPanjangPapan(); j++){
+                    iteration++;
+                    if (canPlace(trans, i, j)){
+                        placePiece(trans, i, j);
+                        if (solve(pieceIndex + 1)){
+                            return true;
+                        }
+                        removePiece(trans, i, j);
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean isBoeardFull(){
+        char[][] board = data.getBoard();
+
+        for (int i = 0; i < data.getLebarPapan(); i++){
+            for (int j = 0; j < data.getPanjangPapan(); j++){
+                if (board[i][j] == ' '){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     /* ========== Rotate ========= */
