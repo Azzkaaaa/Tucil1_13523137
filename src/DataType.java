@@ -17,6 +17,7 @@ public class DataType {
         this.caseType = caseType;
         this.board = new char[lebarPapan][panjangPapan];
         this.pieces = new ArrayList<>();
+        setElmtBoard();
     }
 
     /* ========== Methods ========= */
@@ -44,7 +45,11 @@ public class DataType {
         return this.pieces;
     }
 
-    public void setElmtBoard(int x, int y, char c){
-        this.board[x][y] = c;
+    public void setElmtBoard(){
+        for (int i = 0; i < lebarPapan; i++){
+            for (int j = 0; j < panjangPapan; j++){
+                this.board[i][j] = ' ';
+            }
+        }
     }
 }
