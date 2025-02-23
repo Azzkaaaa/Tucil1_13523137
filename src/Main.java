@@ -12,10 +12,10 @@ public class Main {
             System.out.print("Masukkan nama file: ");
             String testName = scanFile.nextLine();
 
-            File file = new File(testName);
+            File file = new File("test/" + testName);
 
             if (!file.exists()){
-                System.out.print("File tidak ditemukan, COba lagi!..");
+                System.out.println("File tidak ditemukan, COba lagi!..");
             }else {
                 try {
                     dt = test.readDataFile(testName);
