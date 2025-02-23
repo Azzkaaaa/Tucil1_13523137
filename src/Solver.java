@@ -83,8 +83,8 @@ public class Solver {
                 for (int j = 0; j < col; j++){
                     pw.print(board[i][j]);
                 }
+                pw.println();
             }
-            pw.println();
         } catch(IOException e){
             e.printStackTrace();
         }
@@ -107,8 +107,8 @@ public class Solver {
         for (Piece trans : transform){
             for (int i = 0; i < data.getLebarPapan(); i++){
                 for (int j = 0; j < data.getPanjangPapan(); j++){
-                    iteration++;
                     if (canPlace(trans, i, j)){
+                        iteration++;
                         placePiece(trans, i, j);
                         if (solve(pieceIndex + 1)){
                             return true;
