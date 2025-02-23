@@ -72,6 +72,9 @@ public class Solver {
     }
     /* ========== Save ========= */
     public void saveSol(String filename, long elapsed){
+        if (!filename.endsWith(".txt")) {
+            filename += ".txt";
+        }
         String path = "save/" + filename;
 
         try (PrintWriter pw = new PrintWriter(new FileWriter(path))){
