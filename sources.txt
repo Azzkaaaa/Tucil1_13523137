@@ -1,0 +1,6 @@
+D:\CompSCI_ITB\Materi\Semester_4\STIMA\Tucil\Tucil_1\src\DataType.java
+D:\CompSCI_ITB\Materi\Semester_4\STIMA\Tucil\Tucil_1\src\Main.java
+D:\CompSCI_ITB\Materi\Semester_4\STIMA\Tucil\Tucil_1\src\Piece.java
+D:\CompSCI_ITB\Materi\Semester_4\STIMA\Tucil\Tucil_1\src\Point.java
+D:\CompSCI_ITB\Materi\Semester_4\STIMA\Tucil\Tucil_1\src\Solver.java
+D:\CompSCI_ITB\Materi\Semester_4\STIMA\Tucil\Tucil_1\src\TestReader.java

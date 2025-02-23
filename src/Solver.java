@@ -1,4 +1,7 @@
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +24,76 @@ public class Solver {
         return solFound;
     }
     /* ========== Methods ========= */
+    /* ========== Print ========= */
+    public void printSol(){
+        char[][] board = data.getBoard();
+        int row = data.getLebarPapan();
+        int col = data.getPanjangPapan();
+
+        for (int i = 0; i < row; i++){
+            for (int j = 0; j < col; j++){
+                char pieceID = board[i][j];
+                System.out.print(getColorForPiece(pieceID) + pieceID + "\u001B[0m ");
+            }
+            System.out.println();
+        }
+    }
+    /* ========== Color ========= */
+    private String getColorForPiece(char pieceId) {
+        switch (pieceId) {
+            case 'A': return "\u001B[31m"; 
+            case 'B': return "\u001B[32m"; 
+            case 'C': return "\u001B[33m"; 
+            case 'D': return "\u001B[34m"; 
+            case 'E': return "\u001B[35m"; 
+            case 'F': return "\u001B[36m"; 
+            case 'G': return "\u001B[91m"; 
+            case 'H': return "\u001B[92m"; 
+            case 'I': return "\u001B[93m"; 
+            case 'J': return "\u001B[94m"; 
+            case 'K': return "\u001B[95m"; 
+            case 'L': return "\u001B[96m"; 
+            case 'M': return "\u001B[37m"; 
+            case 'N': return "\u001B[90m"; 
+            case 'O': return "\u001B[1;31m"; 
+            case 'P': return "\u001B[1;32m";
+            case 'Q': return "\u001B[1;33m";
+            case 'R': return "\u001B[1;34m";
+            case 'S': return "\u001B[1;35m";
+            case 'T': return "\u001B[1;36m";
+            case 'U': return "\u001B[1;91m";
+            case 'V': return "\u001B[1;92m";
+            case 'W': return "\u001B[1;93m";
+            case 'X': return "\u001B[1;94m";
+            case 'Y': return "\u001B[1;95m";
+            case 'Z': return "\u001B[1;96m";
+            default:  return "\u001B[0m";  
+        }
+    }
     /* ========== Save ========= */
-    public void saveSol(){
+    public void saveSol(String filename, long elapsed){
+        String path = "save/" + filename;
+
+        try (PrintWriter pw = new PrintWriter(new FileWriter(path))){
+            char[][] board = data.getBoard();
+            int row = data.getLebarPapan();
+            int col = data.getPanjangPapan();
+
+            for (int i = 0; i < row; i++){
+                for (int j = 0; j < col; j++){
+                    pw.print(board[i][j]);
+                }
+            }
+            pw.println();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
 
     }
     /* ========== Solve ========= */
     public boolean solve(int pieceIndex){
         if (pieceIndex == data.getPieces().size()){
-            if (isBoeardFull()){
+            if (isBoardFull()){
                 solFound = true;
                 return true;
             }
@@ -56,7 +121,7 @@ public class Solver {
         return false;
     }
 
-    private boolean isBoeardFull(){
+    private boolean isBoardFull(){
         char[][] board = data.getBoard();
 
         for (int i = 0; i < data.getLebarPapan(); i++){
