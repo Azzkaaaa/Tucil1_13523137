@@ -29,11 +29,11 @@ public class TestReader {
             index += pr.lineCount; 
         }
 
-        System.out.println("M = " + lebarPapan + ", N = " + panjangPapan + ", P = " + jumlahPiece);
-        System.out.println("Case = " + caseType);
-        for (Piece pc : dt.getPieces()) {
-            System.out.println("Piece " + pc.getId() + " coords = " + formatCoords(pc.getCoords()));
-        }
+        // System.out.println("M = " + lebarPapan + ", N = " + panjangPapan + ", P = " + jumlahPiece);
+        // System.out.println("Case = " + caseType);
+        // for (Piece pc : dt.getPieces()) {
+        //     System.out.println("Piece " + pc.getId() + " coords = " + formatCoords(pc.getCoords()));
+        // }
 
         return dt;
     }
