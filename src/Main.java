@@ -18,7 +18,7 @@ public class Main {
                 System.out.println("File tidak ditemukan, COba lagi!..");
             }else {
                 try {
-                    dt = test.readDataFile(testName);
+                    dt = test.readDataFile("test/" + testName);
                     valid = true;
                 } catch (Exception e) {
                     System.out.println("Terjadi kesalahan: " + e.getMessage());
@@ -41,12 +41,11 @@ public class Main {
             System.out.println("Waktu: " + elapsed + " ms");
             System.out.println("Banyak iterasi: " + solver.getIteration());
     
-            // Tanyakan user, misal:
             System.out.print("Simpan solusi ke file (ya/tidak)? ");
             Scanner sc = new Scanner(System.in);
             String ans = sc.nextLine();
             if (ans.equalsIgnoreCase("ya")) {
-                // misal nama file: "solusi.txt"
+                System.out.print("Mau save di mana? ");
                 String filename = sc.nextLine();
                 solver.saveSol(filename, elapsed);
                 System.out.println("Solusi di simpan di: " + "save/" + filename);
