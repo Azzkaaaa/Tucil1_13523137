@@ -1,0 +1,15 @@
+3 5 7
+DEFAULT
+ZZ
+Z
+Z
+F
+FF
+I
+ L
+LL
+L
+A
+A
+B
+JJ
