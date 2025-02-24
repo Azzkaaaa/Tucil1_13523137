@@ -97,14 +97,14 @@ public class TestReader {
     }
 
 
-    private String formatCoords(List<Point> coords) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        for (Point p : coords) {
-            sb.append("(").append(p.getX()).append(",").append(p.getY()).append(") ");
-        }
-        sb.append("]");
-        return sb.toString();
-    }
+    // private String formatCoords(List<Point> coords) {
+    //     StringBuilder sb = new StringBuilder();
+    //     sb.append("[");
+    //     for (Point p : coords) {
+    //         sb.append("(").append(p.getX()).append(",").append(p.getY()).append(") ");
+    //     }
+    //     sb.append("]");
+    //     return sb.toString();
+    // }
     
 }
